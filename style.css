@@ -1,9 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: none;
-  font-family: sans-serif;
+  outline-color: #1a2a66;
+  font-family: "Roboto", sans-serif;
 }
 
 html {
@@ -13,11 +15,20 @@ html {
 body {
   background-color: #ebf0f1;
 
+  & h2,
+  & h3,
+  & .logo,
+  & header a,
+  & nav a {
+    font-family: "Bungee", sans-serif;
+    font-weight: 500;
+  }
+
   /* Início do Header */
   & header {
     background-color: #1a2a66;
-    padding: 3rem 20rem;
-    color: #fff;
+    padding: 1.5rem 20rem;
+    color: #ebf0f1;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,7 +36,6 @@ body {
     & a {
       color: inherit;
       text-decoration: none;
-      font-weight: 900;
     }
 
     & .logo {
@@ -49,8 +59,11 @@ body {
 
     & h2 {
       color: #1a2a66;
-      font-weight: 900;
-      margin: 1rem 0 2rem 0;
+      margin: 1rem 0;
+    }
+
+    & p {
+      color: #1a2a66;
     }
 
     & .about {
@@ -88,15 +101,18 @@ body {
 
         & h3 {
           color: #1a2a66;
-          font-weight: 900;
           margin-bottom: 2rem;
         }
 
         & form {
           display: flex;
           flex-direction: column;
-          width: 28%;
+          width: 38%;
           row-gap: 1rem;
+
+          & input:nth-of-type(1) {
+            margin-top: -1rem;
+          }
 
           & input {
             padding: 0.4rem;
@@ -119,9 +135,15 @@ body {
             padding: 1rem;
             font-weight: 900;
             font-size: 1rem;
-            color: #fff;
+            color: #ebf0f1;
             background-color: #1a2a66;
             border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            &:hover {
+              background-color: #374a91;
+            }
           }
         }
 
@@ -133,8 +155,8 @@ body {
 
           & div {
             & img {
-              height: 1.5rem;
-              margin-right: 0.8rem;
+              height: 2rem;
+              margin-right: 1rem;
             }
           }
         }
@@ -152,10 +174,143 @@ body {
   /* Início do Footer */
   & footer {
     background-color: #1a2a66;
-    padding: 2rem 20rem;
-    color: #fff;
+    padding: 2rem 0;
+    color: #ebf0f1;
     font-size: 1.2rem;
     margin-top: 4rem;
+    text-align: center;
   }
   /* Fim do Footer */
+}
+
+/* Responsividade */
+
+@media screen and (max-width: 1025px) {
+  header {
+    padding: 1.5rem 12rem !important;
+  }
+  main {
+    padding: 0 12rem !important;
+  }
+}
+
+@media screen and (max-width: 915px) {
+  .image img {
+    width: 30rem !important;
+  }
+
+  form {
+    width: 30% !important;
+
+    & input,
+    & textarea {
+      font-size: 1.1rem !important;
+    }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  header {
+    padding: 1.5rem 8rem !important;
+  }
+
+  main {
+    & .about {
+      flex-direction: column;
+      align-items: center !important;
+    }
+
+    & .contact {
+      & > div {
+        flex-direction: column !important;
+        row-gap: 4rem;
+
+        & form {
+          width: 80% !important;
+        }
+
+        & .follow-us {
+          width: 80% !important;
+          margin-right: 0 !important;
+          align-items: center !important;
+        }
+
+        & .location {
+          width: 80% !important;
+          align-items: center !important;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  header {
+    & .logo {
+      font-size: 1.6rem !important;
+    }
+
+    & nav a {
+      font-size: 1rem !important;
+    }
+  }
+
+  .image img {
+    width: 35rem !important;
+  }
+
+  .description {
+    min-width: 32rem;
+  }
+
+  .contact {
+    min-width: 32rem;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  html {
+    font-size: 58% !important;
+  }
+
+  header {
+    padding: 1rem 4rem !important;
+
+    & .logo {
+      font-size: 2rem !important;
+    }
+
+    & nav {
+      & a {
+        font-size: 0.9rem !important;
+      }
+    }
+  }
+
+  main {
+    padding: 0 4rem !important;
+
+    & h2 {
+      font-size: 1.8rem;
+    }
+
+    & h3 {
+      margin-bottom: 0.5rem !important;
+    }
+  }
+}
+
+@media screen and (max-width: 321px) {
+  header {
+    justify-content: center !important;
+
+    & nav {
+      display: none !important;
+    }
+  }
+
+  .image img {
+    width: 30rem !important;
+  }
 }
